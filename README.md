@@ -1,1 +1,1 @@
-# customer-segmentation-ecommerce
+# Ecommerce Customer Segmentation
