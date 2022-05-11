@@ -14,19 +14,16 @@ Fokus pengerjaan project ini adalah melakukan segmentasi berdasarkan perilaku tr
 
 ## **Built With**
 Project ini dibangun dengan menggunakan bahasa pemrograman Python dan sejumlah library python diantaranya:
-- pandas
-- numpy
-- seaborn
-- matplotlib
-- Garbage Collector (gc)
-- scikit-learn
-- Scipy
+- [pandas](https://pandas.pydata.org/)
+- [numpy](https://numpy.org/)
+- [seaborn](https://seaborn.pydata.org/)
+- [matplotlib](https://matplotlib.org/)
+- [Garbage Collector (gc)](https://docs.python.org/3/library/gc.html)
+- [scikit-learn](https://scikit-learn.org/)
+- [SciPy](https://scipy.org/)
 
 ## **Steps and Process**
-
-Seperti telah dijelaskan sebelumnya pembuatan capstone project module 2 berfokus pada pembuatan sebuah rangkaian analisa terhadap suatu dataset tertentu (Northwind Database). Pada project ini penulis menggunakan tabel employee sebagai fokus analisa yang dilakukan. Terdapat 
-[**list down question**](https://github.com/yandaaw/Capstone-Project-Module-02-Northwind-Employee-Data-Analysis/blob/main/Capstone%20Project%20Module%202%20Listdown%20Question%20Doc.pdf) yang penulis telah buat pada bagian isi folder project. <br> <br>
-Kemudian untuk data analysis proses, penulis menggunakan 6-key steps sebagai panduan dalam pembuatan project customer segmentation kali ini. Yang mana proses-proses dibawah mengacu pada sifat iteratif dari proses pemecahan masalah berdasarkan alur kerangka kerja atau metodologi project data science seperti pada gambar dibawah.
+Seperti telah dijelaskan sebelumnya pembuatan project ini berfokus pada melakukan segmentasi customer berdasarkan perilaku transaksi yang telah mereka lakukan. Kemudian untuk data analysis proses dan pembuatan model machine learning, penulis menggunakan 6-key steps sebagai panduan dalam pembuatan project ini. Yang mana proses-proses dibawah mengacu pada sifat iteratif dari proses pemecahan masalah berdasarkan alur kerangka kerja atau metodologi project data science seperti pada gambar dibawah.
 1.  [Step 1](https://github.com/yandaaw/customer-segmentation-ecommerce/blob/main/cs1p_data_collection_wrangling.ipynb): Define problem statement / data requirements specification.
 2.	[Step 2](https://github.com/yandaaw/customer-segmentation-ecommerce/blob/main/cs1p_data_collection_wrangling.ipynb): Data collection 
 3.	[Step 3](https://github.com/yandaaw/customer-segmentation-ecommerce/blob/main/cs1p_data_collection_wrangling.ipynb): Data cleansing
@@ -43,8 +40,29 @@ Clustering merupakan suatu metode yang dapat digunakan untuk mendapatkan pengger
 Metode clustering ada bermacam-macam. Metode yang akan digunakan pada project ini adalah K-Means. Dalam metode k-means kita memerlukan konsep jarak untuk mengetahui seberapa dekat suatu data poin dengan data poin lainnya. Salah satu konsep jarak yang dapat kita gunakan adalah jarak euclidean. Banyaknya cluster yang optimal dapat kita tentukan dengan metode elbow, silhouette atau bisa juga sudah ditentukan di awal berdasarkan domain knowledge.
 ![image](https://user-images.githubusercontent.com/73176284/167814538-914ec127-c316-4193-afc4-3fac51da65fe.png)
  
+## **Conclusion EDA and Model**
+<p align="center">
+  <img width="450" height="300" src="https://user-images.githubusercontent.com/73176284/167811822-c68612f5-8c03-432c-bfad-a6f8b1e12162.png">
+</p>
 
-![image](https://user-images.githubusercontent.com/73176284/167811767-825d6f0d-9c41-4d40-bb80-7c61b07c84e2.png)
-![image](https://user-images.githubusercontent.com/73176284/167811822-c68612f5-8c03-432c-bfad-a6f8b1e12162.png)
+- Terdapat korelasi antara banyaknya Quantity dan Amount Spent dari suatu customer.
+- United Kingdom, Germany, dan France merupakan negara dengan jumlah Customer terbanyak.
+- Drusy Comer dari United Kindom merupakan Customer dengan jumlah pembelian terbanyak.
+- Bulan November 2011 merupakan waktu dengan jumlah penjualan terbanyak.
+- Hari kamis merupakan waktu dengan jumlah penjualan terbanyak.
+- Jumbo bag adalah product dengan penjualan terbanyak.
+- Negara France akan dipilih sebagai lokasi pemetaan untuk pembuatan rfm model - customer segmentation pada project ini karena pertimbangan banyaknya data dan point kesimpulan sebelumnya.   
+- 70% Customer tersebar pada label Need Attention, kemudian 24% dari total Customer tersebar pada label Not Loyal, dan sisanya sebanyak 6% dari total Customer tersebar pada label Priority. 
+- Kategory umur Generation X dan Millenials merupakan kategori umur dari Customer yang mendominasi sebaran label Need Attention dan Not Loyal. Sedangkan sebanyak 5% dari total seluruh presentase customer berlabel Priority berasal dari Generation x.
+<br>
+
+Untuk peninjauan hasil kesimpulan proses [**Exploratory Data Analysis**](https://github.com/yandaaw/customer-segmentation-ecommerce/blob/main/cs2p_exploratory_data_analysis.ipynb) dan pembuatan [**Model RFM**](https://github.com/yandaaw/customer-segmentation-ecommerce/blob/main/cs3p_rfm_country_france.ipynb) dapat dilihat pada setiap langkah-langkah pada bagian page **Steps and Process** diatas. Kemudian karakteristik hubungan label segmentasi dengan features data yang lain untuk setiap customer dapat dilihat pada [**dashboard**](https://public.tableau.com/app/profile/sriyanda.afrida.wahyudi4721/viz/CustomerSegmentationDashboard_16520896677390/Dashboard1) pada bagian page **Data Visualization** dibawah. 
+
+## **Data Visualization**
+Berikut merupakan visualisasi dalam bentuk dashboard untuk Customer Segmentation sebagai representasi proses data communication. [**Tableau**](https://public.tableau.com/en-us/s/) merupakan tools yang digunakan dalam pembuatan customer segmentation dashboard dibawah.
 ![image](https://user-images.githubusercontent.com/73176284/167811946-d777ed74-23c8-4b3a-b7ce-5277c2f07c9d.png)
 
+Link dibawah merupakan beberapa dashboard yang telah dibuat dan berkaitan dengan project ini.
+- [**Customer Profiling Dashboard**](https://public.tableau.com/app/profile/sriyanda.afrida.wahyudi4721/viz/CustomerProfilingDashboard_16520824416280/Dashboard1)
+- [**Customer Segmentation Dashboard**](https://public.tableau.com/app/profile/sriyanda.afrida.wahyudi4721/viz/CustomerSegmentationDashboard_16520896677390/Dashboard1)
+- [**Product Analysis Dashboard**](https://public.tableau.com/app/profile/sriyanda.afrida.wahyudi4721/viz/ProductAnalysisDashboard_16521079878290/Dashboard1)
